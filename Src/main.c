@@ -29,6 +29,7 @@
 /* USER CODE BEGIN Includes */
 #include "app_ethernet.h"
 #include "udp_echoclient.h"
+#include "stm32h7xx_nucleo_144.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -56,6 +57,7 @@ struct netif gnetif;
 void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
 static void Netif_Config(void);
+static void BSP_Config(void);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -102,6 +104,7 @@ int main(void)
 	MX_USB_OTG_FS_PCD_Init();
 	MX_LWIP_Init();
 	/* USER CODE BEGIN 2 */
+	BSP_Config();
 	/* Configure the Network interface */
 	Netif_Config();
 
@@ -200,6 +203,17 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
+/**
+  * @brief  BSP Configuration
+  * @param  None
+  * @retval None
+  */
+static void BSP_Config(void)
+{
+  BSP_LED_Init(LED2);
+  BSP_LED_Init(LED3);
+}
+
 /**
  * @brief  Setup the network interface
  * @param  None

@@ -103,6 +103,7 @@
 "Src/main.o"
 "Src/stm32h7xx_hal_msp.o"
 "Src/stm32h7xx_it.o"
+"Src/stm32h7xx_nucleo_144.o"
 "Src/syscalls.o"
 "Src/sysmem.o"
 "Src/system_stm32h7xx.o"
