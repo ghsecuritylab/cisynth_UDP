@@ -101,6 +101,7 @@
 "Src/gpio.o"
 "Src/lwip.o"
 "Src/main.o"
+"Src/mdma.o"
 "Src/stm32h7xx_hal_msp.o"
 "Src/stm32h7xx_it.o"
 "Src/stm32h7xx_nucleo_144.o"

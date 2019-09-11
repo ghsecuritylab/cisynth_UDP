@@ -40,7 +40,7 @@
 #endif /* WITH_RTOS */
 
 /* USER CODE BEGIN 0 */
-
+#include "stm32h7xx_hal_eth.h"
 /* USER CODE END 0 */
 
 /* Global Variables ----------------------------------------------------------*/

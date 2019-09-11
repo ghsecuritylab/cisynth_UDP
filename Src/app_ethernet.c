@@ -20,7 +20,6 @@
 /* Includes ------------------------------------------------------------------*/
 #include "lwip/opt.h"
 #include "main.h"
-#include "stm32h7xx_nucleo_144.h"
 #if LWIP_DHCP 
 #include "lwip/dhcp.h"
 #endif
@@ -29,6 +28,7 @@
 #ifdef USE_LCD
 #include "Log/lcd_log.h"
 #endif
+#include "stm32h7xx_nucleo_144.h"
 
 /* Private typedef -----------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/

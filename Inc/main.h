@@ -56,15 +56,15 @@ void Error_Handler(void);
 /* USER CODE BEGIN EFP */
 
 /* UDP local connection port */
-#define UDP_SERVER_PORT    ((uint16_t)7U)
+#define UDP_SERVER_PORT    ((uint16_t)7777U)
 /* UDP remote connection port */
-#define UDP_CLIENT_PORT    ((uint16_t)7U)
+#define UDP_CLIENT_PORT    ((uint16_t)7777U)
 
 /*Static DEST IP ADDRESS: DEST_IP_ADDR0.DEST_IP_ADDR1.DEST_IP_ADDR2.DEST_IP_ADDR3 */
 #define DEST_IP_ADDR0   ((uint8_t)192U)
 #define DEST_IP_ADDR1   ((uint8_t)168U)
 #define DEST_IP_ADDR2   ((uint8_t)0U)
-#define DEST_IP_ADDR3   ((uint8_t)11U)
+#define DEST_IP_ADDR3   ((uint8_t)14U)
 
 /*Static IP ADDRESS: IP_ADDR0.IP_ADDR1.IP_ADDR2.IP_ADDR3 */
 #define IP_ADDR0   ((uint8_t) 192U)
@@ -89,6 +89,7 @@ void Error_Handler(void);
 /* Private defines -----------------------------------------------------------*/
 #define USER_Btn_Pin GPIO_PIN_13
 #define USER_Btn_GPIO_Port GPIOC
+#define USER_Btn_EXTI_IRQn EXTI15_10_IRQn
 #define MCO_Pin GPIO_PIN_0
 #define MCO_GPIO_Port GPIOH
 #define RMII_MDC_Pin GPIO_PIN_1
