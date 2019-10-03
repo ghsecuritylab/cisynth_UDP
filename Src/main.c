@@ -31,6 +31,8 @@
 #include "app_ethernet.h"
 #include "udp_echoclient.h"
 #include "stm32h7xx_nucleo_144.h"
+#include <stdio.h>
+#include <string.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -126,8 +128,19 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+	uint16_t   data[5000+1] = {0};
 	while (1)
 	{
+		  for (uint16_t i = 5000; i > 0; i--)
+		  {
+			  data[i] = i * 6;
+		  }
+
+		  udp_send_buff((uint8_t*)data, 5000*2);
+
+		  HAL_Delay(1000);
+
+
 		/* Read a received packet from the Ethernet buffers and send it
 	       to the lwIP for handling */
 		ethernetif_input(&gnetif);

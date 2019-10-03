@@ -28,6 +28,7 @@
 /* Exported functions ------------------------------------------------------- */
 void udp_echoclient_connect(void);
 void udp_echoclient_send(void);
+void udp_send_buff(uint8_t* buff, uint16_t len);
 
 #endif /* __UDP_ECHOCLIENT_H__ */
 

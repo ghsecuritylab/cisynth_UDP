@@ -83,7 +83,7 @@ void udp_echoclient_send(void)
   struct pbuf *p;
   
   sprintf((char*)data, "sending udp client message %d", (int)message_count);
-  
+
   /* allocate pbuf from pool*/
   p = pbuf_alloc(PBUF_TRANSPORT,strlen((char*)data), PBUF_RAM);
   
@@ -95,6 +95,35 @@ void udp_echoclient_send(void)
     /* send udp data */
     udp_send(upcb, p); 
     
+    /* free pbuf */
+    pbuf_free(p);
+  }
+}
+
+/**
+  * @brief This function is called when an UDP datagrm has been received on the port UDP_PORT.
+  * @param arg user supplied argument (udp_pcb.recv_arg)
+  * @param pcb the udp_pcb which received data
+  * @param p the packet buffer that was received
+  * @param addr the remote IP address from which the packet was received
+  * @param port the remote port from which the packet was received
+  * @retval None
+  */
+void udp_send_buff(uint8_t* buff, uint16_t len)
+{
+  struct pbuf *p;
+
+  /* allocate pbuf from pool*/
+  p = pbuf_alloc(PBUF_TRANSPORT, len, PBUF_RAM);
+
+  if (p != NULL)
+  {
+    /* copy data to pbuf */
+    pbuf_take(p, (uint16_t*)buff, len);
+
+    /* send udp data */
+    udp_send(upcb, p);
+
     /* free pbuf */
     pbuf_free(p);
   }
